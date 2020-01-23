@@ -1,0 +1,46 @@
+
+auth:     file format elf32-i386
+
+
+Disassembly of section .plt:
+
+080483c0 <puts@plt-0x10>:
+ 80483c0:	ff 35 04 a0 04 08    	push   DWORD PTR ds:0x804a004
+ 80483c6:	ff 25 08 a0 04 08    	jmp    DWORD PTR ds:0x804a008
+ 80483cc:	00 00                	add    BYTE PTR [eax],al
+ 80483ce:	00 00                	add    BYTE PTR [eax],al
+
+080483d0 <puts@plt>:
+ 80483d0:	ff 25 0c a0 04 08    	jmp    DWORD PTR ds:0x804a00c
+ 80483d6:	68 00 00 00 00       	push   0x0
+ 80483db:	e9 e0 ff ff ff       	jmp    80483c0 <_init+0x2c>
+
+080483e0 <system@plt>:
+ 80483e0:	ff 25 10 a0 04 08    	jmp    DWORD PTR ds:0x804a010
+ 80483e6:	68 08 00 00 00       	push   0x8
+ 80483eb:	e9 d0 ff ff ff       	jmp    80483c0 <_init+0x2c>
+
+080483f0 <exit@plt>:
+ 80483f0:	ff 25 14 a0 04 08    	jmp    DWORD PTR ds:0x804a014
+ 80483f6:	68 10 00 00 00       	push   0x10
+ 80483fb:	e9 c0 ff ff ff       	jmp    80483c0 <_init+0x2c>
+
+08048400 <__libc_start_main@plt>:
+ 8048400:	ff 25 18 a0 04 08    	jmp    DWORD PTR ds:0x804a018
+ 8048406:	68 18 00 00 00       	push   0x18
+ 804840b:	e9 b0 ff ff ff       	jmp    80483c0 <_init+0x2c>
+
+08048410 <setvbuf@plt>:
+ 8048410:	ff 25 1c a0 04 08    	jmp    DWORD PTR ds:0x804a01c
+ 8048416:	68 20 00 00 00       	push   0x20
+ 804841b:	e9 a0 ff ff ff       	jmp    80483c0 <_init+0x2c>
+
+08048420 <sprintf@plt>:
+ 8048420:	ff 25 20 a0 04 08    	jmp    DWORD PTR ds:0x804a020
+ 8048426:	68 28 00 00 00       	push   0x28
+ 804842b:	e9 90 ff ff ff       	jmp    80483c0 <_init+0x2c>
+
+08048430 <__isoc99_scanf@plt>:
+ 8048430:	ff 25 24 a0 04 08    	jmp    DWORD PTR ds:0x804a024
+ 8048436:	68 30 00 00 00       	push   0x30
+ 804843b:	e9 80 ff ff ff       	jmp    80483c0 <_init+0x2c>
