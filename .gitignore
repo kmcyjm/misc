@@ -1,3 +1,4 @@
 .*
 !/.gitignore
+!/.python-version
 **/peda-session-auth.txt
