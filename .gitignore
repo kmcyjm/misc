@@ -2,3 +2,4 @@
 !/.gitignore
 !/.python-version
 **/peda-session-auth.txt
+**/peda-session-dash.txt
