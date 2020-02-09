@@ -518,7 +518,6 @@ Disassembly of section .text:
   40069a:	89 7d ec             	mov    DWORD PTR [rbp-0x14],edi
   40069d:	c7 45 fc 00 00 00 00 	mov    DWORD PTR [rbp-0x4],0x0
   4006a4:	eb 55                	jmp    4006fb <decrypt_flag+0x65>
-<<<<<<< HEAD
   4006a6:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
   4006a9:	48 98                	cdqe   
   4006ab:	0f b6 88 80 10 60 00 	movzx  ecx,BYTE PTR [rax+0x601080]
@@ -528,20 +527,6 @@ Disassembly of section .text:
   4006b9:	01 d0                	add    eax,edx
   4006bb:	83 e0 03             	and    eax,0x3
   4006be:	29 d0                	sub    eax,edx
-=======
-
-  4006a6:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
-  4006a9:	48 98                	cdqe   ;we need cdqe here to make rax
-  4006ab:	0f b6 88 80 10 60 00 	movzx  ecx,BYTE PTR [rax+0x601080] ; what is stored at 0x601080, it is in .data
-  4006b2:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
-  4006b5:	99                   	cdq    ;The CDQ instruction copies the sign (bit 31) of the value in the EAX register into every bit position in the EDX register.  
-                                       ; eax = 0, edx = 0
-                                       ; we need cdq here to make edx
-  4006b6:	c1 ea 1e             	shr    edx,0x1e; right shift 30 bits
-  4006b9:	01 d0                	add    eax,edx ;sum of eax and edx put in eax
-  4006bb:	83 e0 03             	and    eax,0x3; 11 in binary, only keep the last 2 least significant bits in eax
-  4006be:	29 d0                	sub    eax,edx;
->>>>>>> e2ac832544162083063a1251d97a37f7bf857e92
   4006c0:	48 98                	cdqe   
   4006c2:	48 8d 55 ec          	lea    rdx,[rbp-0x14]
   4006c6:	48 01 d0             	add    rax,rdx
@@ -563,17 +548,9 @@ Disassembly of section .text:
   4006f1:	83 c0 01             	add    eax,0x1
   4006f4:	89 45 ec             	mov    DWORD PTR [rbp-0x14],eax
   4006f7:	83 45 fc 01          	add    DWORD PTR [rbp-0x4],0x1
-<<<<<<< HEAD
   4006fb:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
   4006fe:	83 f8 38             	cmp    eax,0x38
   400701:	76 a3                	jbe    4006a6 <decrypt_flag+0x10>
-=======
-
-  4006fb:	8b 45 fc             	mov    eax,DWORD PTR [rbp-0x4]
-  4006fe:	83 f8 38             	cmp    eax,0x38
-  400701:	76 a3                	jbe    4006a6 <decrypt_flag+0x10>
-
->>>>>>> e2ac832544162083063a1251d97a37f7bf857e92
   400703:	90                   	nop
   400704:	5d                   	pop    rbp
   400705:	c3                   	ret    
@@ -583,11 +560,7 @@ Disassembly of section .text:
   400707:	48 89 e5             	mov    rbp,rsp
   40070a:	53                   	push   rbx
   40070b:	48 83 ec 28          	sub    rsp,0x28
-<<<<<<< HEAD
   40070f:	89 7d dc             	mov    DWORD PTR [rbp-0x24],edi
-=======
-  40070f:	89 7d dc             	mov    DWORD PTR [rbp-0x24],edi ; $rbp-0x24 = 0x7ffffff0000c
->>>>>>> e2ac832544162083063a1251d97a37f7bf857e92
   400712:	83 7d dc 01          	cmp    DWORD PTR [rbp-0x24],0x1
   400716:	77 08                	ja     400720 <fib+0x1a>
   400718:	8b 45 dc             	mov    eax,DWORD PTR [rbp-0x24]
@@ -659,13 +632,8 @@ Disassembly of section .text:
   4007d7:	e8 54 fd ff ff       	call   400530 <puts@plt>
   4007dc:	b8 00 00 00 00       	mov    eax,0x0
   4007e1:	e8 65 ff ff ff       	call   40074b <calculate_key>
-<<<<<<< HEAD
   4007e6:	89 05 d4 08 20 00    	mov    DWORD PTR [rip+0x2008d4],eax        # 6010c0 <__TMC_END__>
   4007ec:	bf cb 09 40 00       	mov    edi,0x4009cb
-=======
-  4007e6:	89 05 d4 08 20 00    	mov    DWORD PTR [rip+0x2008d4],eax        # 6010c0 <__TMC_END__>, result of fib(1015)
-  4007ec:	bf cb 09 40 00       	mov    edi,0x4009cb ; "Done caculating key"
->>>>>>> e2ac832544162083063a1251d97a37f7bf857e92
   4007f1:	e8 3a fd ff ff       	call   400530 <puts@plt>
   4007f6:	90                   	nop
   4007f7:	5d                   	pop    rbp
@@ -679,11 +647,7 @@ Disassembly of section .text:
   400807:	8b 05 b3 08 20 00    	mov    eax,DWORD PTR [rip+0x2008b3]        # 6010c0 <__TMC_END__>
   40080d:	89 c7                	mov    edi,eax
   40080f:	e8 82 fe ff ff       	call   400696 <decrypt_flag>
-<<<<<<< HEAD
   400814:	bf 80 10 60 00       	mov    edi,0x601080
-=======
-  400814:	bf 80 10 60 00       	mov    edi,0x601080 ; squiggles
->>>>>>> e2ac832544162083063a1251d97a37f7bf857e92
   400819:	e8 12 fd ff ff       	call   400530 <puts@plt>
   40081e:	90                   	nop
   40081f:	5d                   	pop    rbp
@@ -770,7 +734,6 @@ Disassembly of section .text:
 
 0000000000400910 <__libc_csu_fini>:
   400910:	f3 c3                	repz ret 
-<<<<<<< HEAD
 
 Disassembly of section .fini:
 
@@ -1520,5 +1483,3 @@ Disassembly of section .comment:
   2f:	36 30 36             	xor    BYTE PTR ss:[rsi],dh
   32:	30 39                	xor    BYTE PTR [rcx],bh
   34:	00                   	.byte 0x0
-=======
->>>>>>> e2ac832544162083063a1251d97a37f7bf857e92
