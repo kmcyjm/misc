@@ -8,7 +8,7 @@ max_counter = []
 flag = ""
 output = ""
 
-pinPath = "/home/ubuntu/intel-pin-ctf/pin-3.11-97998-g7ecce2dac-gcc-linux/pin"
+pinPath = "/home/jyi/Downloads/pin-3.11-97998-g7ecce2dac-gcc-linux/pin"
 # Note that if you want to send data to the process’s stdin, you need to create the Popen object with stdin=PIPE.
 # Similarly, to get anything other than None in the result tuple, you need to give stdout=PIPE and/or stderr=PIPE too.
 # https://docs.python.org/3/library/subprocess.html#subprocess.Popen.communicate
