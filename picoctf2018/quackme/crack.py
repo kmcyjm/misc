@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import datetime
+import time
 from subprocess import Popen, PIPE
 
 max_counter = []
@@ -19,7 +19,7 @@ pinWrite = lambda cont: pin.stdin.write(cont)
 # The data will be strings if streams were opened in text mode; otherwise, bytes.
 pinRead = lambda : pin.communicate()[0]
 
-print("Start time: ", datetime.datetime.now())
+start_time = time.time()
 
 # stop when the "You are winner!" message is printed in the output
 while ("You are winner!" not in output):
@@ -38,7 +38,7 @@ while ("You are winner!" not in output):
             line = f.readline()
 
         counter = line.split()[1]
-        print("Testing ", ascii_char, ", The corresponding counter is: ", counter)
+        print(f"Testing {flag}{ascii_char} the corresponding counter is: {counter}")
 
         if len(max_counter) == 0:
             max_counter.append(counter)
@@ -54,4 +54,5 @@ while ("You are winner!" not in output):
     print("#" * 10 + "\n" + "Flag is now: " + flag + "\n" + "#" * 10)
 
 print("Flag found! " + flag)
-print("End time: ", datetime.datetime.now())
+duration = time.time() - start_time
+print(f"Duration {duration} seconds")
