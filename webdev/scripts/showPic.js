@@ -3,12 +3,15 @@ function showPic(whichpic) {
   var placeholder = document.getElementById("placeholder");
   placeholder.setAttribute("src", source);
   var text = whichpic.getAttribute("title");
-  var description = document.getElementById("description");
-  description.firstChild.nodeValue=text;
+  if (document.getElementById("description")) {
+    var description = document.getElementById("description");
+    description.firstChild.nodeValue=text;
+  }
+  return true;
 }
 
 window.onload = function() {
-  if (!document.getElementByTagName) return false;
+  // if (!document.getElementByTagName) return false; // this somehow returns false in Chrome
   var images = document.getElementById("imagegallery");
   var links = images.getElementsByTagName("a");
   for (var i=0; i<links.length; i++) {
@@ -20,15 +23,3 @@ window.onload = function() {
     }
   }
 }
-
-
-// function popUp (winURL) {
-//   windows.open(winURL, "popup", "width=320,height=480");
-// }
-
-/*
-function countBodyChildren() {
-  var body_element = document.getElementsByTagName("body")[0];
-  alert (body_element.nodeType);
-}
-*/
