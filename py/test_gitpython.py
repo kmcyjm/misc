@@ -18,15 +18,20 @@ TARGET_BRANCH = 'RES-12345'
 # print('Hello')
 GIT_REPO_PATH = '/Users/jyi/misc'
 repo = Repo(GIT_REPO_PATH)
-origin = repo.remote(name='origin')
+
+# origin = repo.remote(name='origin')
 
 if repo.is_dirty():
-	current = repo.git.checkout('-b', 'gitpython_test2')
+	current = repo.create_head('gitpython_test3')
+	current.checkout()
+	master = repo.heads.master
+	repo.git.pull('origin', master)
+
 	repo.git.add(update=True)
 	repo.index.commit('test commit message')
 
 	# origin.push
-	repo.git.push('--set-upstream', origin, current)
+	repo.git.push('--set-upstream', 'origin', current)
 
 
 # g = Github(ACCESS_TOKEN)
