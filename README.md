@@ -1,3 +1,3 @@
 # misc
 
-This repository is for Miscellanous things.
+This repository is for Miscellanous things

@@ -10,3 +10,4 @@ if repo.is_dirty():
 	repo.index.commit('test commit message')
 
 	push_msg = origin.push
+	print('Done.')
