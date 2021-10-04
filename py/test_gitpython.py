@@ -21,12 +21,12 @@ repo = Repo(GIT_REPO_PATH)
 origin = repo.remote(name='origin')
 
 if repo.is_dirty():
-	current = repo.git.checkout('-b', 'gitpython_test1')
+	current = repo.git.checkout('-b', 'gitpython_test2')
 	repo.git.add(update=True)
 	repo.index.commit('test commit message')
 
 	# origin.push
-	repo.git.push('--set-upstream', 'origin', current)
+	repo.git.push('--set-upstream', origin, current)
 
 
 # g = Github(ACCESS_TOKEN)
