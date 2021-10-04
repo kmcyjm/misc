@@ -5,7 +5,7 @@ repo = Repo(GIT_REPO_PATH)
 origin = repo.remote(name='origin')
 
 if repo.is_dirty():
-	repo.git.checkout('-b', 'gitpython_test')
+	repo.git.checkout('gitpython_test')
 	repo.git.add(update=True)
 	repo.index.commit('test commit message')
 
